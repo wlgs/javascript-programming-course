@@ -1,2 +1,4 @@
 # JavaScript programming course
-JavaScript programming course 2021/22 at AGH UST.
+This repository will contain some percentage of material realized during JavaScript programming course.
+
+If possible I will provide also the pdfs of the assignments.
