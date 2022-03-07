@@ -84,3 +84,19 @@ nav li {
     50%{background-color:blue}
     100%{background-color:red}
 }
+
+@media screen and (max-width: 600px){
+    .wrapper{
+        flex-direction: column;
+        flex-basis:100%;
+    }
+    nav{
+        width:auto;
+    }
+    *{
+        font-size: 4vw;
+    }
+    h1,h2{
+        font-size: 6vw;
+    }
+}
