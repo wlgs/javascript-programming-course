@@ -8,77 +8,110 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link rel="stylesheet" href="ex3w3.css" />
     <title>Tytuł strony / Page Title</title>
   </head>
   <body>
-    <header>
-      <!-- Page title -->
-      <!-- Background color: #EFF -->
-      <!-- Border color: #A8A8A8 -->
+    <div class="w3-bar w3-yellow w3-padding-small">
+      <a
+        href="javascript:void(0)"
+        class="w3-bar-item w3-button w3-left w3-hide-large w3-hide-medium"
+        onclick="myFunction()"
+        >&#9776;</a
+      >
+      <div class="w3-bar-item w3-button w3-hide-small">
+        <i class="fa fa-shopping-cart"></i>
+      </div>
 
-      <h1>Tytuł strony</h1>
-    </header>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button">
+          Produkty <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#" class="w3-bar-item w3-button">Link 1</a>
+          <a href="#" class="w3-bar-item w3-button">Link 2</a>
+        </div>
+      </div>
 
-    <nav>
-      <!--Tutaj menu nawigacyjne / Here the navigation menu -->
-      <!-- left & right margin: 25px -->
+      <a href="#" class="w3-bar-item w3-button w3-gray w3-right">Szukaj</a>
+      <input
+        type="text"
+        class="w3-bar-item w3-input w3-right w3-green"
+        placeholder="Szukaj.."
+      />
+    </div>
 
-      <ul>
-        <li>
-          <a href="">Element 1</a>
-        </li>
+    <div
+      id="demo"
+      class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium"
+    >
+      <a href="#" class="w3-bar-item w3-button">Link 1</a>
+      <a href="#" class="w3-bar-item w3-button">Link 2</a>
+      <a href="#" class="w3-bar-item w3-button">Link 3</a>
+    </div>
 
-        <li>
-          <a href="">Element 2</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- Tutaj treść panelu bocznego / Here the content of the side panel-->
+    <script>
+      function myFunction() {
+        var x = document.getElementById("demo");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+    </script>
 
-    <aside>
-      <h1>Panel boczny</h1>
+    <main class="w3-container w3-center">
 
-      <h2>Ciekawe odsyłacze</h2>
+      <div class="w3-row-padding">
+        <article class="w3-border w3-col l6">
+          <img
+            src="https://image.shutterstock.com/image-photo/modern-desktop-computer-wireless-keyboard-260nw-55573504.jpg"
+            alt="Zdjęcie komputera."
+          />
+          <h3>Zestaw komputerowy 1</h3>
+          <ul>
+            <li>karta graficzna</li>
+            <li>plyta glowna</li>
+            <li>procesor</li>
+            <li>pamiec ram</li>
+          </ul>
+        </article>
 
-      <ul>
-        <li>
-          <a href="">Odsyłacz 1</a>
-        </li>
+        <article class="w3-border w3-col l2">
+          <img
+            src="https://image.shutterstock.com/image-photo/modern-desktop-computer-wireless-keyboard-260nw-55573504.jpg"
+            alt="Zdjęcie komputera."
+          />
+          <h3>Zestaw komputerowy 2</h3>
+          <ul>
+            <li>karta graficzna</li>
+            <li>plyta glowna</li>
+            <li>procesor</li>
+            <li>pamiec ram</li>
+          </ul>
+        </article>
+      </div>
 
-        <li>
-          <a href="">Odsyłacz 2</a>
-        </li>
+      <div class="w3-row-padding">
+        <article class="w3-border w3-col l2">
+          <img
+            src="https://www.pngall.com/wp-content/uploads/2016/04/PC-Mouse-Free-Download-PNG.png"
+            alt="Zdjęcie myszy."
+            class="mouse-img"
+          />
+          <h3>Mysz</h3>
+        </article>
 
-        <li>
-          <a href="">Odsyłacz 3</a>
-        </li>
-      </ul>
-    </aside>
-
-    <main>
-      <!--Tutaj treść strony / Here the content of the page -->
-
-      <h1>Treść strony</h1>
-
-      <blockquote>
-        Natenczas Wojski chwycił na taśmie przypięty Swój róg bawoli, długi,
-        cętkowany, kręty Jak wąż boa, oburącz do ust go przycisnął, Wzdął
-        policzki jak banię, w oczach krwią zabłysnął, Zasunął wpół powieki,
-        wciągnął w głąb pół brzucha I do płuc wysłał z niego cały zapas ducha, I
-        zagrał: róg jak wicher, wirowatym dechem Niesie w puszczę muzykę i
-        podwaja echem. Umilkli strzelcy, stali szczwacze zadziwieni Mocą,
-        czystością, dziwną harmoniją pieni. Starzec cały kunszt, którym niegdyś
-        w lasach słynął, Jeszcze raz przed uszami myśliwców rozwinął; Napełnił
-        wnet, ożywił knieje i dąbrowy, Jakby psiarnię w nie wpuścił i rozpoczął
-        łowy. Bo w graniu była łowów historyja krótka: Zrazu odzew dźwięczący,
-        rześki: to pobudka; Potem jęki po jękach skomlą: to psów granie; A
-        gdzieniegdzie ton twardszy jak grzmot: to strzelanie.
-      </blockquote>
+        <article class="w3-border w3-col l2">
+          <img
+            src="https://www.pngall.com/wp-content/uploads/2016/04/PC-Mouse-Free-Download-PNG.png"
+            alt="Zdjęcie myszy."
+            class="mouse-img"
+          />
+          <h3>Mysz</h3>
+        </article>
+      </div>
     </main>
-
-    <footer>
-      <!-- Tutaj treść stopki / Here the content of the footer -->
-      <a href="mailto:your.email.address">Imię Nazwisko</a>
-    </footer>
   </body>
 </html>
