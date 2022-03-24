@@ -1,4 +1,5 @@
 var expect = chai.expect;
+
 var checkboxLS = document.getElementById("localstorage");
 var txtArea = document.getElementById("txtArea");
 
@@ -9,8 +10,11 @@ const mapDatabase = new Map();
 
 function buttonHandler(el) {
   var textAreaVal = txtArea.value;
-
   var input = textAreaVal.split(" ");
+  inputHandler(input);
+}
+
+function inputHandler(input){
   if (input[0] == "dodaj") {
     var data = mapDatabase.get(input[1]);
     if (data == undefined || data.length == 0) {
@@ -46,8 +50,31 @@ function buttonHandler(el) {
   }
 }
 
-describe("TEST1", function () {
-  it("DESCRIBE", function () {
-    expect(4).to.equal(4);
+// TODO: TESTS
+describe("Input handler tests", function () {
+  it("dodaj 5 razy", function () {
+    var input = "dodaj polska 1";
+    input = input.split(" ");
+    inputHandler(input);
+    inputHandler(input);
+    inputHandler(input);
+    inputHandler(input);
+    inputHandler(input);
+    expect(mapDatabase.get("polska")).to.equal(5);
+  });
+
+  it("dodaj usuń", function () {
+    var input = "dodaj polska 1";
+    input = input.split(" ");
+    inputHandler(input);
+    var input = "usun polska";
+    input = input.split(" ");
+    inputHandler(input);
+    expect(mapDatabase.get("polska")).to.equal(undefined);
+  });
+  it("wczytaj puste", function () {
+    var input = "wczytaj polska";
+    input = input.split(" ");
+    expect(mapDatabase.get("polska")).to.equal(undefined);
   });
 });
