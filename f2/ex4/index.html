@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
   </head>
   <body>
     <form name="test">
       ​<textarea id="txtArea" rows="5" cols="40"></textarea>
-      <input type="button" value="Button" onclick="buttonHandler(this)" />
+      <div class="centered">
+        <input type="button" value="Wykonaj" onclick="buttonHandler(this)" />
+        <input type="checkbox" id="localstorage" name="localstorage">
+        <label for="localstorage">LocalStorage</label>
+      </div>
     </form>
 
     <div id="mocha"></div>
