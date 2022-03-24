@@ -1,3 +1,14 @@
 .mouse-img{
-  width:40%;
+  width:150px;
+}
+
+.bigger{
+  width:400px;
+}
+.smaller{
+  width:250px;
+}
+
+article{
+  width:fit-content;
 }
