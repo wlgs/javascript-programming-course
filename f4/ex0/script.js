@@ -84,5 +84,9 @@ window.setInterval(function(){
 }, 1000)
 
 window.setTimeout(function(){
-  
+  console.log("GAME ENDED!!!!")
+  console.log("GAME ENDED!!!!")
+  console.log("GAME ENDED!!!!")
+  console.log("GAME ENDED!!!!")
+  mainEl.remove();
 },30000)
