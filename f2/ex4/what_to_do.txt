@@ -1,0 +1,16 @@
+NAPISAC CRUDA DLA danych o covidzie
+
+mamy kraje
+wybrac 2 i parametry
+
+dla kraju polska liczba nowych przypadkow w dniu dzisiejszym jest taka itp
+
+modyfikowac
+usuwac
+wyswietlac
+
+modyfikuj polska przypadki X
+
+guard czy parametr nalezy do tabeli
+
+ze strony wziac parametry
