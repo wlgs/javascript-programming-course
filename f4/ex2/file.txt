@@ -1,0 +1,3 @@
+this is
+a content
+of text file.
