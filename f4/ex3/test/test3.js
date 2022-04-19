@@ -24,11 +24,25 @@ describe('GET /submit?filename=file2.txt (empty)', function () {
 });
 
 describe('GET /submit?filename=test', function () {
-      it('respond with Directory', function (done) {
+      it('respond with Directory and its files', function (done) {
             server
                   .get('/submit?filename=test')
                   .expect('Content-Type', /text\/plain/)
-                  .expect(200, `Result:\nDirectory\nFiles in directory:\n`, done);
+                  .expect(200, `Result:\nDirectory\nFiles in directory:\ntest3.js\n`, done);
+      });
+});
+
+describe('GET /submit?filename=directory', function () {
+      it('respond with Directory and its files', function (done) {
+            server
+                  .get('/submit?filename=directory')
+                  .expect('Content-Type', /text\/plain/)
+                  .expect(200, 'Result:\n' +
+                        'Directory\n' +
+                        'Files in directory:\n' +
+                        'executable\n' +
+                        'nextfile.txt\n' +
+                        'randomfile.txt\n', done);
       });
 });
 
