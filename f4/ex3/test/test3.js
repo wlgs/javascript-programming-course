@@ -28,6 +28,7 @@ describe('GET /submit?filename=test', function () {
             server
                   .get('/submit?filename=test')
                   .expect('Content-Type', /text\/plain/)
-                  .expect(200, `Result:\nDirectory\n`, done);
+                  .expect(200, `Result:\nDirectory\nFiles in directory:\n`, done);
       });
 });
+

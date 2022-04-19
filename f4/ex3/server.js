@@ -22,7 +22,7 @@ function requestListener(request, response) {
         response.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
         /* ************************************************** */
         console.log("Creating a response body");
-        if (request.method == "GET"){
+        if (request.method == "GET") {
             // If the GET method was used to send data to the server
             // Place given data (here: 'Hello <name>') in the body of the answer
             var filename = url.searchParams.get("filename");
@@ -30,18 +30,25 @@ function requestListener(request, response) {
             var type = undefined;
             response.write(`Result:\n`);
             try {
-                if(fs.lstatSync(filename).isDirectory()){
+                if (fs.lstatSync(filename).isDirectory()) {
                     type = "Directory"
+                    var fileListString = ""
+                    var files = fs.readdirSync(filename);
+                    files.forEach(file => {
+                        fileListString += file;
+                        fileListString += "\n";
+                    });  
                     response.write(
-                        `${type}\n`
+                        `${type}\nFiles in directory:\n${fileListString}`
                     );
                     console.log("Sending the response");
                     response.end(); // The end of the response — send it to the browser
+
                 }
-                else{
+                else {
                     type = "File"
-                    fs.readFile(filename,{encoding:'utf8', flag:'r'},(err,data)=>{
-                        if(err!=null){
+                    fs.readFile(filename, { encoding: 'utf8', flag: 'r' }, (err, data) => {
+                        if (err != null) {
                             response.write(
                                 `Something went wrong -> ${err}`
                             );
