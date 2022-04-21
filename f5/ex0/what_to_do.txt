@@ -1,0 +1,26 @@
+WHAT TO DO:
+
+
+
+bierze dane z HTML -> pole tekstowe -> wyslij
+
+
+dane sa wysylane na serwer -> przetwarza dane
+
+mamy napisac:
+skrypt glowny
+oraz modul commonjs /es6
+
+
+modul ma zawierac klase Files
+3 metody:
+1. idzie rekursywnie po wszystkich katalogach 
+start(katalog startowy) -> plik tekstowy -> right(),
+plik binarny -> info()
+
+max dlugosc lini to N
+ma wyrownywac do PRAWEJ
+ma zajmowac jak najmniej linii
+
+
+MIME cos takiego

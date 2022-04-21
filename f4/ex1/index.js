@@ -1,5 +1,6 @@
 import {Operation} from './module.js';
 // const Operation = require('./module');
+
 const myArgs = process.argv;
 if (myArgs.length!=4){
     console.log("Wrong number of arguments.");
