@@ -1,0 +1,12 @@
+html 
+    body
+        table 
+            tr 
+                th x 
+                th operation 
+                th y 
+            each op in data
+                tr 
+                    td #{op.arg1}
+                    td #{op.type}
+                    td #{op.arg2}

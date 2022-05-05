@@ -1,0 +1,27 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "The hello world app",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx mocha",
+    "start": "node app2",
+    "app1": "echo Uruchamiam aplikację nr 1 && node app1",
+    "app2": "echo Uruchamiam aplikację nr 2 && node app2"
+  },
+  "author": "Mikołaj Wielgos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongodb": "^4.5.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.2.4",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-json": "^1.0.0",
+    "mocha": "^10.0.0",
+    "supertest": "^6.2.3"
+  }
+}

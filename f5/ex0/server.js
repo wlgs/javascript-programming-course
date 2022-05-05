@@ -39,8 +39,7 @@ function requestListener(request, response) {
                     var fopHandler = new fop.File();
                     fopHandler.traverse(filename);
                     fopHandler.clean();
-                    fopHandler.right();
-                    var res = fopHandler.getresult();
+                    var res = fopHandler.right();
                     response.write(
                         `${type}\nDirectory traversed:\n${res}`
                     );

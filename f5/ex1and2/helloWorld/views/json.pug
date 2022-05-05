@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Your first page
+    body
+        table 
+            tr 
+                th x 
+                th operation 
+                th y 
+                th result
+            each op in data.operations
+                tr 
+                    td #{op.arg1}
+                    td #{op.type}
+                    td #{op.arg2}
+                    if op.type == "+"
+                        td #{op.arg1 + op.arg2}
+                    else if op.type == "*"
+                        td #{op.arg1 * op.arg2}
+                    else if op.type == "/"
+                        td #{op.arg1 / op.arg2}
+                    else if op.type == "-"
+                        td #{op.arg1 - op.arg2}
+
+                

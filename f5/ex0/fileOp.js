@@ -3,6 +3,8 @@
 import * as fs from "fs";
 
 class File {
+
+    finalString = "";
     constructor(startPath) {
         this.startPath = startPath;
         this.finalString = "";
@@ -35,21 +37,31 @@ class File {
         var cur_pos = 0;
         var lines = new Array();
         var chunk = this.finalString.slice(cur_pos, cur_pos + offset);
+        var result = "";
         while (chunk.length > 0) {
             chunk = chunk.concat("\r\n");
+            // console.log("CHUNK: ", chunk);
             lines.push(chunk);
             cur_pos += offset;
             chunk = this.finalString.slice(cur_pos, cur_pos + offset);
         }
+        var rep = " ";
+        rep = rep.repeat(this.MAXLINESIZE - lines[lines.length-1].length + 2)
+        lines[lines.length-1] = rep.concat(lines[lines.length-1])
         lines.forEach((line,idx)=>{
-            if (line.length < offset) {
-                var to_add = offset - line.length;
-                var space = " ";
-                space = space.repeat(to_add);
-                line = space.concat(line); 
-            }
-            this.finalString = this.finalString.concat(line);
+            result += line;
         });
+        console.log(lines);
+        // lines.forEach((line,idx)=>{
+        //     if (line.length < offset) {
+        //         var to_add = offset - line.length;
+        //         var space = " ";
+        //         space = space.repeat(to_add);
+        //         line = space.concat(line); 
+        //     }
+        //     this.finalString = this.finalString.concat(line);
+        // });
+        return result;
     }
     getresult() {
         return this.finalString;
