@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="area">Area</label>
+      <input type="text" id="area" name="area" />
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" />
+      <input type="button" onclick="downloadData()" value="Pobierz">
+    </form>
+
+    <h1>Remote</h1>
+    <div id="remote">Remote date and time</div>
+    <!-- ***************** -->
+    <h1>Local</h1>
+    <div id="local">Local date and time</div>
+  </body>
+
+  <script>
+
+    const downloadData = () => {
+        const area = document.getElementById("area").value;
+        const location = document.getElementById("location").value;
+        const remoteEl = document.getElementById("remote");
+        const localEl = document.getElementById("local");
+        const url = "https://worldtimeapi.org/api/timezone";
+        const url2 = "http://localhost:4041";
+        remoteEl.textContent = "Downloading data...";
+
+        fetch(url + '/' + area + '/' + location).then(response => {
+            if (!response.ok) throw new Error('Could not fetch data.')
+            response.json().then(data => {
+                let date = new Date(data.datetime);
+                remoteEl.textContent = date.toDateString() + ', ' +  date.toTimeString();
+            })
+        })
+
+        fetch(url2).then(response => {
+            if (!response.ok) throw new Error('Could not fetch data.')
+            if (response.headers.get("Content-Type") == 'text/xml'){
+                response.text().then( data => {
+                    localEl.innerHTML = data;
+                })
+            }
+        })
+    }
+
+  </script>
+</html>
