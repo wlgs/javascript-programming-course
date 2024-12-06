@@ -12,7 +12,7 @@
   "author": "Mikołaj Wielgos",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.1",
+    "express": "^4.21.2",
     "mongodb": "^4.17.0",
     "morgan": "^1.10.0",
     "node-fetch": "^3.2.10",
